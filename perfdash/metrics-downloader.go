@@ -75,7 +75,6 @@ func (g *Downloader) getData() (JobToCategoryData, error) {
 	if err != nil {
 		return nil, fmt.Errorf("failed to refresh config: %v", err)
 	}
-	klog.Infof("Getting Data from %v...", options.Mode)
 	result := make(JobToCategoryData)
 	var resultLock sync.Mutex
 	var wg sync.WaitGroup

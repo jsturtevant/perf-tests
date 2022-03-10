@@ -435,12 +435,25 @@ var (
 		},
 	}
 
+	windowsDescriptions = TestDescriptions{
+		"E2E": {
+			"resourceUsage": []TestDescription{
+				{
+					Name:             "windows",
+					OutputFilePrefix: "WindowsCPUUsagePrometheus",
+					Parser:           parsePerfData,
+				},
+			},
+		},
+	}
+
 	jobTypeToDescriptions = map[string]TestDescriptions{
 		"performance":  performanceDescriptions,
 		"benchmark":    benchmarkDescriptions,
 		"dnsBenchmark": dnsBenchmarkDescriptions,
 		"storage":      storageDescriptions,
 		"throughput":   throughputDescriptions,
+		"windows":      windowsDescriptions,
 	}
 )
 

@@ -47,6 +47,7 @@ func NewGCSMetricsBucket(bucket, path, credentialPath string) (MetricsBucket, er
 	if err != nil {
 		return nil, err
 	}
+	klog.Infof("setting up bucket for %s, %s", bucket, path)
 	b := c.Bucket(bucket)
 	return &GCSMetricsBucket{
 		client:  c,
